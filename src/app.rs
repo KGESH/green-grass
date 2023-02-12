@@ -19,7 +19,7 @@ pub fn run() {
 
     let metadata = get_metadata_from_url(&url);
     let repo_path = &metadata.repo_name;
-    let log_file_path = format!("{}/{}", repo_path, COMMIT_LOG_FILE_NAME);
+    let log_file_path = format!("{repo_path}/{COMMIT_LOG_FILE_NAME}");
 
     if let Err(e) = clone_repository(&url) {
         panic!("Clone repo failed {e}");
